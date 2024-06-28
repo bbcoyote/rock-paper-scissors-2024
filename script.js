@@ -11,39 +11,82 @@ function getComputerChoice() {
     let choiceArray = ["rock", "paper", "scissors"]
     let playValue = Math.floor(Math.random() * 3)
     let computerChoice = choiceArray[playValue]
-    console.log(playValue, computerChoice)
+    // console.log(playValue, computerChoice)
     return computerChoice
 }
-getComputerChoice()
 
 // write a function to get human choice (getHumanChoice)
 // return a valid choice depending on what the user chooses.
 // the human choice will be made with a prompt that will pop up when getHumanChoice is called.
 // the choice will be stored in a variable called humanChoice.
 // humanChoice will be lowercased to ensure no bugs due to casing.
-let humanChoice;
 
 function getHumanChoice() {
     let humanChoice = prompt("Choose rock, paper, or scissors.").toLowerCase();
-    console.log(humanChoice)
     return humanChoice
 }
-getHumanChoice()
 
 // make a function that checks for incorrect values. call this function valueChecker.
 // we can make a clean comaprison function featuring a switch statement that will call the getHumanChoice function if use chooses the wrong play.
 
-function valueChecker() {
-    switch (humanChoice) {
-        case 'rock':
-            break;
-        case 'paper':
-            break;
-        case 'scissors':
-            break;
-        default:
-            alert('incorrect choice, please choose rock, paper, or scissors')
-            getHumanChoice()
+//add variable to keep track of score. these variables will be global variables. humanScore & computer score.
+let humanScore = 0;
+let computerScore = 0;
+
+// write logic to play a single round.
+// create a function playRound that takes two params; humanChoice and computerChoice.
+// does it make sense to put all these actions in one function?
+// play round will compare human and computer choices.
+// rock beats scissors
+// scissors beats paper
+// paper beats rock.
+// increment winners score by 1
+
+function playRound(humanChoice, computerChoice) {
+    humanChoice = getHumanChoice()
+    computerChoice = getComputerChoice()
+    console.log(`computer ${computerChoice}, player ${humanChoice}`)
+    if (humanChoice === 'rock') {
+        if (computerChoice === 'scissors') {
+            console.log('you win')
+        }
+    } else if (humanChoice === 'paper') {
+        if (computerChoice === 'rock') {
+            console.log('you win')
+        }
+    } else if (humanChoice === 'scissors') {
+        if (computerChoice === 'paper') {
+            console.log('you win')
+        }
+    }
+    if (humanChoice === 'scissors') {
+        if (computerChoice === 'rock') {
+            console.log('you lose')
+        }
+    } else if (humanChoice === 'rock') {
+        if (computerChoice === 'paper') {
+            console.log('you lose')
+        }
+    } else if (humanChoice === 'paper') {
+        if (computerChoice === 'scissors') {
+            console.log('you lose')
+        }
+    }
+    if (humanChoice === 'rock') {
+        if (computerChoice === 'rock') {
+            console.log('draw')
+        }
+    } else if (humanChoice === 'scissors') {
+        if (computerChoice === 'scissors') {
+            console.log('draw')
+        }
+    } else if (humanChoice === 'paper') {
+        if (computerChoice === 'paper') {
+            console.log('draw')
+        }
     }
 }
-valueChecker()
+
+// let humanChoice = getHumanChoice()
+// const computerChoice = 'scissors'
+playRound()
