@@ -16,3 +16,29 @@ function getComputerChoice() {
 }
 
 getComputerChoice()
+
+// write a function to get human choice (getHumanChoice)
+// return a valid choice depending on what the user chooses.
+// the human choice will be made with a prompt that will pop up when getHumanChoice is called.
+// the choice will be stored in a variable called humanChoice.
+// humanChoice will be lowercased to ensure no bugs due to casing.
+let humanChoice;
+
+function getHumanChoice() {
+    let humanChoice = prompt("Choose rock, paper, or scissors.").toLowerCase();
+    console.log(humanChoice)
+    return humanChoice
+}
+
+getHumanChoice()
+
+// function checkChoice() {
+//     if (humanChoice !== "rock" || "paper" || "scissors") {
+//         alert("invalid choice, please choose again")
+//         getHumanChoice();
+//     } else {
+//         return humanChoice
+//     }
+// }
+// checkChoice()
+
