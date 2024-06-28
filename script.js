@@ -46,47 +46,14 @@ function playRound(humanChoice, computerChoice) {
     humanChoice = getHumanChoice()
     computerChoice = getComputerChoice()
     console.log(`computer ${computerChoice}, player ${humanChoice}`)
-    if (humanChoice === 'rock') {
-        if (computerChoice === 'scissors') {
-            console.log('you win')
-        }
-    } else if (humanChoice === 'paper') {
-        if (computerChoice === 'rock') {
-            console.log('you win')
-        }
-    } else if (humanChoice === 'scissors') {
-        if (computerChoice === 'paper') {
-            console.log('you win')
-        }
-    }
-    if (humanChoice === 'scissors') {
-        if (computerChoice === 'rock') {
-            console.log('you lose')
-        }
-    } else if (humanChoice === 'rock') {
-        if (computerChoice === 'paper') {
-            console.log('you lose')
-        }
-    } else if (humanChoice === 'paper') {
-        if (computerChoice === 'scissors') {
-            console.log('you lose')
-        }
-    }
-    if (humanChoice === 'rock') {
-        if (computerChoice === 'rock') {
-            console.log('draw')
-        }
-    } else if (humanChoice === 'scissors') {
-        if (computerChoice === 'scissors') {
-            console.log('draw')
-        }
-    } else if (humanChoice === 'paper') {
-        if (computerChoice === 'paper') {
-            console.log('draw')
-        }
-    }
+
+    humanChoice === 'rock' && computerChoice === 'scissors' ? console.log('you win', `computer score: ${computerScore}, player score: ${++humanScore}`) :
+        humanChoice === 'paper' && computerChoice === 'rock' ? console.log('you win', `computer score: ${computerScore}, player score: ${++humanScore}`) :
+            humanChoice === 'scissors' && computerChoice === 'paper' ? console.log('you win', `computer score: ${computerScore}, player score: ${++humanScore}`) :
+                humanChoice === computerChoice ? console.log('draw') : console.log('you lose', `computer score: ${++computerScore}, player score: ${humanScore}`);
 }
 
-// let humanChoice = getHumanChoice()
-// const computerChoice = 'scissors'
-playRound()
+const humanChoice = getHumanChoice()
+const computerChoice = getComputerChoice()
+
+playRound(humanChoice, computerChoice)
