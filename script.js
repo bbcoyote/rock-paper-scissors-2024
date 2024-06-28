@@ -14,7 +14,6 @@ function getComputerChoice() {
     console.log(playValue, computerChoice)
     return computerChoice
 }
-
 getComputerChoice()
 
 // write a function to get human choice (getHumanChoice)
@@ -29,16 +28,22 @@ function getHumanChoice() {
     console.log(humanChoice)
     return humanChoice
 }
-
 getHumanChoice()
 
-// function checkChoice() {
-//     if (humanChoice !== "rock" || "paper" || "scissors") {
-//         alert("invalid choice, please choose again")
-//         getHumanChoice();
-//     } else {
-//         return humanChoice
-//     }
-// }
-// checkChoice()
+// make a function that checks for incorrect values. call this function valueChecker.
+// we can make a clean comaprison function featuring a switch statement that will call the getHumanChoice function if use chooses the wrong play.
 
+function valueChecker() {
+    switch (humanChoice) {
+        case 'rock':
+            break;
+        case 'paper':
+            break;
+        case 'scissors':
+            break;
+        default:
+            alert('incorrect choice, please choose rock, paper, or scissors')
+            getHumanChoice()
+    }
+}
+valueChecker()
