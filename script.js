@@ -11,7 +11,6 @@ function getComputerChoice() {
     let choiceArray = ["rock", "paper", "scissors"]
     let playValue = Math.floor(Math.random() * 3)
     let computerChoice = choiceArray[playValue]
-    // console.log(playValue, computerChoice)
     return computerChoice
 }
 
@@ -22,8 +21,8 @@ function getComputerChoice() {
 // humanChoice will be lowercased to ensure no bugs due to casing.
 
 function getHumanChoice() {
-    let humanChoice = prompt("Choose rock, paper, or scissors.").toLowerCase();
-    return humanChoice
+    let humanChoice = prompt("Choose rock, paper, or scissors.");
+    return humanChoice.toLowerCase()
 }
 
 // make a function that checks for incorrect values. call this function valueChecker.
@@ -53,7 +52,27 @@ function playRound(humanChoice, computerChoice) {
                 humanChoice === computerChoice ? console.log('draw') : console.log('you lose', `computer score: ${++computerScore}, player score: ${humanScore}`);
 }
 
-const humanChoice = getHumanChoice()
-const computerChoice = getComputerChoice()
 
-playRound(humanChoice, computerChoice)
+
+// make a function that calls playRound 5 times, keeps track of the score and declares a winner at the end.
+// create a function called playGame
+// the function will call playRound 5 times
+// After all the rounds end compare computer score to player score
+// log the winner to the console.
+// we can call playRound 5 times by either calling playRound 5 times
+// write a for loop that will call play round after each iteration.
+// write a conditional that calls play round until there is a difference of 3 or the sum of each players score reaches 5 for ex if one of the player wins 3 times in a row the game will end and declare a winner
+
+
+function playGame() {
+    for (let roundNumber = 0; roundNumber < 5; roundNumber++) {
+        playRound()
+    } if (computerScore > humanScore) {
+        console.log('computer wins')
+    } if (humanScore > computerScore) {
+        console.log('You win!')
+    } else {
+        console.log('DRAW play again?')
+    }
+}
+playGame()
